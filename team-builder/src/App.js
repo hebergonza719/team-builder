@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import TeamMembers from './components/TeamMembers';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <h1>My Team Members</h1>
-      <div>
+      {/* <div>
         {membersList.map((member) => {
           return (
             <div>
@@ -28,7 +29,8 @@ function App() {
             </div>
           )
           })}
-      </div>
+      </div> */}
+      <TeamMembers teamMembers={membersList}/>
     </div>
   );
 }
