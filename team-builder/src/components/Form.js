@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = () => {
+const Form = ({ addNewMember }) => {
 
   const [member, setMember] = useState({
     name: "",
@@ -13,12 +13,16 @@ const Form = () => {
   };
 
   const submitForm = event => {
-    
+    event.preventDefault();
+
+    addNewMember(member);
+
+    setMember({name: "", email: "", role: ""})
   }
 
   console.log(member);
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <label htmlFor="name">Name</label>
       <input
         id="name"

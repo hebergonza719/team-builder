@@ -8,13 +8,27 @@ import Form from './components/Form';
 function App() {
   const [membersList, setMembersList] = useState([
     {
-      name: "heber",
-      email: "@gmail",
+      name: "Heber Gonzalez",
+      email: "hebergonza@gmail.com",
       role: "student"
     }
   ]);
 
   console.log(membersList);
+
+  const addNewMember = member => {
+
+    const newMember = {
+      name: member.name,
+      email: member.email,
+      role: member.role
+    }
+
+    const newMembersList = [...membersList, newMember];
+
+    setMembersList(newMembersList);
+
+  }
 
 
   return (
@@ -31,8 +45,8 @@ function App() {
           )
           })}
       </div> */}
-      <Form />
-      <TeamMembers teamMembers={membersList}/>
+      <Form addNewMember={addNewMember} />
+      <TeamMembers teamMembers={membersList} />
     </div>
   );
 }
